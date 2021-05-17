@@ -3,6 +3,9 @@ import { Link as RouterLink } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   toolbar: theme.mixins.toolbar,
+  appBar: {
+    zIndex: theme.zIndex.drawer + 1,
+  },
   heading: {
     textDecoration: 'none',
     flexGrow: 1,
@@ -22,7 +25,7 @@ export default function Header() {
 
   return (
     <>
-      <AppBar position="fixed" color="default" className={classes.appBar}>
+      <AppBar position="fixed" className={classes.appBar}>
         <Toolbar className={classes.container}>
           <Typography
             className={classes.heading}
